@@ -1,0 +1,360 @@
+/* Configure Google Fonts */
+@font-face {
+    font-family: "Poppins-Light";
+    src: url(../assets/fonts/Poppins-Light.ttf);
+}
+
+@font-face {
+    font-family: "Poppins-Regular";
+    src: url(../assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Poppins-SemiBold";
+    src: url(../assets/fonts/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url(../assets/fonts/Poppins-Bold.ttf);
+}
+
+/* Variable declaration */
+:root {
+   --normal-text-color: #747579;
+    --dark-text-color: #24292D;
+    --background-title-color: #E6F0F9;
+    --background-active-color: #066ac9;
+    --star-item-color: #F7C32E;
+    --divider-color: #9a9ea4;
+    --bs-card-spacer-y: 0.8rem;
+    --bs-card-spacer-x: 1.25rem;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 3.5%;
+    margin-bottom: 10vh !important;
+
+    & .header {
+
+        & .title-container {
+            margin-top: 20px;
+
+            & h1{
+                color: var(--dark-text-color);
+                text-align: center;
+                font-family: "Poppins-Bold";
+                font-size: 1.6rem;
+            }
+    
+            & p {
+                margin-top: 8px;
+                color: var(--normal-text-color);
+                text-align: center;
+                font-family: "Poppins-Regular";
+                font-size: .9rem;
+            }
+        }
+    
+        & nav {
+            margin-top: 36px;
+            border-radius: 10px;
+            background: var(--background-title-color);
+
+            & ul{
+                padding: 10px;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                flex-wrap: wrap;
+                list-style-type: none;
+                font-family: "Poppins-Regular";
+                font-size: .9rem;
+    
+                & li {
+                    padding: 8px 14px;
+                    margin: 0px 12px;
+
+                    & a {
+                        color: var(--background-active-color);
+                        text-decoration: none;
+                    }
+                }
+
+                & .active, li:hover {
+                    border-radius: 8px;
+                    background-color: var(--background-active-color);
+                    
+                    & a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    & main {
+
+        & .card-container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            & .card {
+                margin-top: 26px;
+                border-radius: 10px;
+                min-width: 100px;
+                overflow: hidden;
+                box-shadow: 0px 0px 40px rgba(29, 58, 83, 0.15) !important;
+
+                & .card-img {
+                    width: 100%;
+                }
+
+                & .card-body {
+                    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+                    width: 100%;
+                    min-height: 220px;
+
+                    & .label-favorite-container{
+                        padding: 8px 0px;
+                        display: flex;
+                        justify-content: space-between;
+
+                        & .label-item {
+                            border-radius: 4px;
+                            padding: 2px 8px;
+                            text-decoration: none;
+                            font-family: "Poppins-Light";
+                            font-size: 0.8rem;
+                            background-color: rgba(111, 66, 193, 0.1);
+                            color: rgb(111, 66, 193);
+                        }
+
+                        & a > i{
+                            color: var(--dark-text-color);
+                        }
+
+                        & a > i[class="fas fa-heart"] {
+                            color: red;
+                        }
+
+                        & a[class^="beginner-level"] {
+                            color: rgb(12, 188, 135);
+                            background: rgba(12, 188, 135, 0.1);
+                        }
+                    }
+
+                    & h5 {
+                        font-family: "Poppins-SemiBold";
+                        font-size: 1.4rem;
+                        color: var(--dark-text-color);
+                    }
+
+                    & p {
+                        margin-top: 6px;
+                        font-family: "Poppins-Regular";
+                        font-size: 0.9rem;
+                        color: var(--normal-text-color);
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    & .rating-star-container {
+                        display: flex;
+
+                        & li {
+                            list-style-type: none;
+                            font-family: "Poppins-Regular";
+                            font-size: 0.8rem;
+                            margin-top: 16px;
+                            margin-right: 4px;
+                        }
+
+                        & .star-item {
+                            color: var(--star-item-color);
+                        }
+
+                        & li:last-child {
+                            color: var(--dark-text-color);
+                        }
+                    }
+                }
+
+                & .card-footer {
+                    padding: 0 var(--bs-card-spacer-x);
+                    padding-bottom: var(--bs-card-spacer-y);
+
+                    & hr {
+                        color: var(--divider-color);
+                        opacity: 0.2;
+                    }
+
+                    & .time-lecture-container {
+                        font-family: "Poppins-Regular";
+                        font-size: 0.8rem;
+                        color: var(--dark-text-color);
+                        margin-top: 14px;
+                        display: flex;
+                        justify-content: space-between;
+
+                        & i {
+                            margin-right: 8px;
+                        }
+
+                        & .time-item > i {
+                            color: red;
+                        }
+
+                        & .lecture-item > i {
+                            color: #FD7E14;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 576px){
+
+    body {
+        margin: 0 5%;
+
+        & .header {
+
+            & nav {
+
+                & ul{
+                    justify-content: space-evenly;
+                }
+            }
+        }
+
+        & main {
+
+            & .card-container {
+                justify-content: space-between;
+
+                & .card {
+                    width: 47%;
+                }
+            }
+        }
+    }  
+}
+
+@media (min-width: 768px){
+
+    body {
+        margin: 0 4.9%;
+
+        & .header {
+
+            & .title-container {
+
+                & h1 {
+                    font-family: "Poppins-Bold";
+                    font-size: 2.4rem;
+                }
+            }
+
+            & nav {
+
+                & ul{
+                    justify-content: center;
+
+                    & li {
+                        margin: 0px 18px;
+                    }
+                }
+            }
+        }
+
+        & main {
+
+            & .card-container {
+
+                & .card {
+                    width: 48.1%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px){
+
+    body {
+        margin: 0 2.1%;
+
+        & .header {
+
+            & .title-container {
+
+                & h1 {
+                    font-family: "Poppins-Bold";
+                    font-size: 2.8rem;
+                }
+
+                & p {
+                    font-size: .9rem;
+                }
+            }
+        }
+
+        & main {
+
+            & .card-container {
+                justify-content: space-evenly;
+
+                & .card {
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px){
+
+    body {
+        margin: 0 16.6%;
+
+        & .header {
+
+            & .title-container {
+
+                & h1 {
+                    font-family: "Poppins-Bold";
+                    font-size: 2.8rem;
+                }
+
+                & p {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        & main {
+
+            & .card-container {
+                justify-content: space-between;
+
+                & .card {
+                    width: 23.5%;
+                }
+            }
+        }
+    }
+}
